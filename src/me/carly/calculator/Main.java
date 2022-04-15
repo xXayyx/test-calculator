@@ -6,6 +6,10 @@ public class Main {
 
     private static final Map<String, String> roms = new HashMap<>();
 
+    public static void main(String[] args) throws Exception {
+        System.out.println(calc("99 - II"));
+    }
+
     public static String calc(String input) throws Exception {
 
         String[] args = getArgs(input);
