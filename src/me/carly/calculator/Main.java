@@ -1,6 +1,5 @@
 package me.carly.calculator;
 
-import java.io.BufferedInputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.*;
@@ -25,7 +24,15 @@ public class Main {
         char operator = args[1].charAt(0);
         String secondNumber = String.valueOf(getNumb(args[2]));
 
-        Integer calculate = calculate(Integer.parseInt(firstNumber), operator, Integer.parseInt(secondNumber));
+        int firstNumberInteger = Integer.parseInt(firstNumber);
+        int secondNumberInteger = Integer.parseInt(secondNumber);
+
+        if (firstNumberInteger < 1 || firstNumberInteger > 10 || secondNumberInteger < 1 || secondNumberInteger > 10) {
+            throw new Exception("не подходящие числа");
+        }
+
+        Integer calculate = calculate(firstNumberInteger, operator, secondNumberInteger);
+
 
         if (!roms.get(firstNumber).equalsIgnoreCase(roms.get(secondNumber))) {
             throw new Exception("т.к. используются одновременно разные системы счисления");
