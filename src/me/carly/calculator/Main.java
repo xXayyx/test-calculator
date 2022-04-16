@@ -17,7 +17,7 @@ public class Main {
 
         BufferedReader bufferedInputStream = new BufferedReader(new InputStreamReader(System.in));
 
-        String[] args = getArgs(bufferedInputStream.readLine());
+        String[] args = getArgs(bufferedInputStream.readLine().toUpperCase());
 
         checkLength(args.length);
 
