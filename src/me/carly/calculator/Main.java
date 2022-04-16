@@ -1,5 +1,8 @@
 package me.carly.calculator;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class Main {
@@ -7,12 +10,14 @@ public class Main {
     private static final Map<String, String> roms = new HashMap<>();
 
     public static void main(String[] args) throws Exception {
-        System.out.println(calc("99 - II"));
+        System.out.println(calc());
     }
 
-    public static String calc(String input) throws Exception {
+    public static String calc() throws Exception {
 
-        String[] args = getArgs(input);
+        BufferedReader bufferedInputStream = new BufferedReader(new InputStreamReader(System.in));
+
+        String[] args = getArgs(bufferedInputStream.readLine());
 
         checkLength(args.length);
 
